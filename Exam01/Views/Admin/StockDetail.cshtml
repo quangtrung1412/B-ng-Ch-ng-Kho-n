@@ -1,0 +1,125 @@
+@model Exam01.Application.Models.Stock;
+<style>
+    .row div {
+        margin: 10px;
+    }
+</style>
+<form asp-action="UpdateStock" method="post">
+    <div class="row">
+        <div class="form-group col-md-1 ">
+            <label asp-for="Id"></label>
+            <input asp-for="Id" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="TC"></label>
+            <input asp-for="TC" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="Tran"></label>
+            <input asp-for="Tran" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="San"></label>
+            <input asp-for="San" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="MuaG3"></label>
+            <input asp-for="MuaG3" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="MuaKL3"></label>
+            <input asp-for="MuaKL3" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="MuaG2"></label>
+            <input asp-for="MuaG2" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="MuaKL2"></label>
+            <input asp-for="MuaKL2" class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-1 ">
+            <label asp-for="MuaG1"></label>
+            <input asp-for="MuaG1" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="MuaKL1"></label>
+            <input asp-for="MuaKL1" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="Gia"></label>
+            <input asp-for="Gia" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="KL"></label>
+            <input asp-for="KL" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="Percent"></label>
+            <input asp-for="Percent" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="BanG1"></label>
+            <input asp-for="BanG1" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="BanKL1"></label>
+            <input asp-for="BanKL1" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="BanG2"></label>
+            <input asp-for="BanG2" class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-1 ">
+            <label asp-for="BanKL2"></label>
+            <input asp-for="BanKL2" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="BanG3"></label>
+            <input asp-for="BanG3" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="BanKL3"></label>
+            <input asp-for="BanKL3" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="TongKL"></label>
+            <input asp-for="TongKL" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="MoCua"></label>
+            <input asp-for="MoCua" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="CaoNhat"></label>
+            <input asp-for="CaoNhat" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="ThapNhat"></label>
+            <input asp-for="ThapNhat" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="NNMua"></label>
+            <input asp-for="NNMua" class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-1 ">
+            <label asp-for="NNBan"></label>
+            <input asp-for="NNBan" class="form-control">
+        </div>
+        <div class="form-group col-md-1 ">
+            <label asp-for="RoomConLai"></label>
+            <input asp-for="RoomConLai" class="form-control">
+        </div>
+    </div>
+
+    <button id="btnSubmit" type="submit" class="btn btn-primary">Submit</button>
+</form>
+@section scripts {
+    <script src="~/js/stockDetail.js"></script>
+}
