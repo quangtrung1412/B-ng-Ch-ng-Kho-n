@@ -1,0 +1,148 @@
+@model IList<Exam01.ViewModel.StockDisplayViewModel>;
+<style>
+    .table {
+        text-align: center;
+    }
+
+    .table tr {
+        border: solid 0.5px white;
+    }
+
+    .table tr td {
+        border: solid 0.5px white;
+    }
+
+    #showConnection {
+        display: inline-block;
+        border: solid 1px;
+        margin: 20px 0 20px 20px;
+        align-items: center;
+        width: 15%;
+    }
+
+    .userConnection,
+    .connection {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .userConnection span {
+        float: right;
+    }
+
+    .connection span {
+        float: right;
+    }
+</style>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container justify-content-center">
+            <div class="col-12 col-lg-8 d-flex">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Exam01</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">connectionId</th>
+                            <th scope="col">browser</th>
+                            <th scope="col">Ipaddress</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbodyModal">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Mã</th>
+            <th scope="col">Tc</th>
+            <th scope="col">Trần</th>
+            <th scope="col">Sàn</th>
+            <th scope="col">Tổng KL</th>
+            <th scope="col">Rom Còn lại</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            <tr id="@Model[i].Id">
+                <th scope="row">@Model[i].Id</th>
+                <td class='@Model[i].GetType().GetProperty("TC").Name'>@Model[i].TC</td>
+                <td class='@Model[i].GetType().GetProperty("Tran").Name'>@Model[i].Tran</td>
+                <td class='@Model[i].GetType().GetProperty("San").Name'>@Model[i].San</td>
+                <td class='@Model[i].GetType().GetProperty("TongKL").Name'>@Model[i].TongKL</td>
+                <td class='@Model[i].GetType().GetProperty("RoomConLai").Name'>@Model[i].RoomConLai</td>
+                <td>
+                    <a class="btn btn-info" asp-action="ShowStockDetail" asp-route-Id="@Model[i].Id">Sửa</a>
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+<div id="showConnection">
+    <div scope="row" class="connection">
+        <label for="">Connection :</label>
+        <span></span>
+    </div>
+    <div scope="row" class="userConnection">
+        <label for="">UserConnection :</label>
+        <span> </span>
+    </div>
+</div>
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Email</th>
+            <th scope="col">UserName</th>
+            <th scope="col">NumberConnection</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+</table>
+
+
+
+
+
+
+@section scripts {
+<script src="~/js/constants.js"></script>
+<script src="~/js/admin.js"></script>
+}
